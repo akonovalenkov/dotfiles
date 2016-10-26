@@ -1,0 +1,33 @@
+
+set hlsearch
+set incsearch
+set ignorecase
+set number
+set nolist
+set relativenumber
+
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+set nowrap       "Don't wrap lines
+set linebreak    "Wrap lines at convenient points
+
+set autoindent
+set smartindent
+set smarttab
+
+let mapleader = ","
+
+map <Leader>g :action GotoFile<CR>
+map s :action AceJumpAction<CR>
+map <tab> :action PreviousTab<CR>
+  
+"nnoremap <buffer> <silent> l <nop>
+"nnoremap <buffer> <silent> h <nop>
+"nnoremap <buffer> <silent> j <nop>
+"nnoremap <buffer> <silent> k <nop>
+ 
+
+inoremap ; <esc>A;<esc>
+set clipboard+=unnamed
