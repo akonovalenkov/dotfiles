@@ -2,6 +2,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set t_Co=256
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -14,13 +16,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rakr/vim-one'
+"Plugin 'rakr/vim-one'
 Plugin 'tpope/vim-fugitive'
 Plugin 'valloric/youcompleteme'
-Plugin 'morhetz/gruvbox'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'morhetz/gruvbox'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
-" Plugin 'pangloss/vim-javascript'
+"Plugin 'pangloss/vim-javascript'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
 " Plugin 'ryanoasis/vim-devicons'
@@ -28,8 +30,10 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mhinz/vim-startify'
-Plugin 'edkolev/tmuxline.vim'
+"Plugin 'edkolev/tmuxline.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/syntastic'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -110,7 +114,7 @@ set smarttab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-" set expandtab
+set expandtab
 
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
@@ -190,15 +194,12 @@ set laststatus=2
 
 "set timeoutlen=1000 ttimeoutlen=0
 
-let g:airline_theme='one'
-
 let g:AutoPairsCenterLine=0
 
-set background=light
 
 
-let g:solarized_termcolors=256
-colorscheme solarized
+"let g:solarized_termcolors=256
+"colorscheme solarized
 
 let g:airline_powerline_fonts = 1
 
@@ -214,8 +215,8 @@ let g:gitgutter_sign_column_always = 1
 
 
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set ai
 set cin
 " set showmatch
@@ -301,3 +302,35 @@ let g:ycm_min_num_of_chars_for_completion = 1
 "let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "set completeopt-=preview
+"
+"
+"syntastic
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec='/home/artem/Code/client-zelda-js/node_modules/eslint/bin/eslint.js'
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
+set background=light
+colorscheme PaperColor
+let g:airline_theme='papercolor'
+"let g:PaperColor_Dark_Override = { 'background' : 255 }
+highlight Normal ctermbg=15
+
