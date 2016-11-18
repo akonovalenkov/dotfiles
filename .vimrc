@@ -2,7 +2,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set t_Co=256
+"set t_Co=256
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -34,6 +34,8 @@ Plugin 'mhinz/vim-startify'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/syntastic'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'jeaye/color_coded'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -178,7 +180,8 @@ set smartcase       " ...unless we type a capital
 " set showtabline=2
 set exrc
 set wildignore+=*/node_modules/*
-let g:NERDTreeIgnore=['\~$', 'node_modules']
+set wildignore+=*/build/*
+let g:NERDTreeIgnore=['\~$', 'node_modules', '^build$']
 set relativenumber
 
 " autocmd VimEnter * NERDTree
@@ -331,6 +334,6 @@ highlight link SyntasticStyleWarningSign SignColumn
 set background=light
 colorscheme PaperColor
 let g:airline_theme='papercolor'
-"let g:PaperColor_Dark_Override = { 'background' : 255 }
+let g:PaperColor_Dark_Override = { 'background' : '#ffffff' }
 highlight Normal ctermbg=15
 
