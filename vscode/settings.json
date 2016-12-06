@@ -1,0 +1,16 @@
+{
+    "editor.cursorStyle": "block",
+    "editor.fontSize": 12,
+    "editor.fontFamily": "Consolas",
+    "editor.lineNumbers": "relative",
+    "editor.tabSize": 2,
+    "editor.roundedSelection": false,
+    "editor.snippetSuggestions": "top",
+    "extensions.autoUpdate": false,
+    "vim.useSystemClipboard": true,
+    "vim.easymotion": true,
+    "vim.hlsearch": true,
+    "vim.leader": ","
+,
+"editor.cursorBlinking": "blink"
+}
