@@ -10,7 +10,22 @@
     "vim.useSystemClipboard": true,
     "vim.easymotion": true,
     "vim.hlsearch": true,
-    "vim.leader": ","
-,
-"editor.cursorBlinking": "blink"
+    "vim.leader": ",",
+    "editor.cursorBlinking": "blink",
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [";"],
+            "after": [ "<ESC>", "$", "\"", "5", "p" ]
+        }
+    ],
+    "vim.otherModesKeyBindings": [
+        {
+            "before": [",", "g"],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen"
+                }
+            ]
+        }
+    ]
 }
