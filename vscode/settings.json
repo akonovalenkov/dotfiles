@@ -1,5 +1,5 @@
 {
-    "editor.cursorStyle": "block",
+    "editor.cursorStyle": "line",
     "editor.fontSize": 12,
     "editor.fontFamily": "Consolas",
     "editor.lineNumbers": "relative",
@@ -11,14 +11,14 @@
     "vim.easymotion": true,
     "vim.hlsearch": true,
     "vim.leader": ",",
-    "editor.cursorBlinking": "blink",
+    "editor.cursorBlinking": "solid",
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": [";"],
-            "after": [ "<ESC>", "$", "\"", "5", "p" ]
+            "after": [ "<ESC>", "$", "\"", "a", "p" ]
         }
     ],
-    "vim.otherModesKeyBindings": [
+    "vim.otherModesKeyBindingsNonRecursive": [
         {
             "before": [",", "g"],
             "commands": [
@@ -26,6 +26,61 @@
                     "command": "workbench.action.quickOpen"
                 }
             ]
+        },
+        {
+            "before": ["s"],
+            "after": ["<leader>", "<leader>", "s"]
+        },
+        {
+            "before": [",", "c", "c"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.blockComment",
+                    "args": []
+                }
+            ]
         }
-    ]
+    ],
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/bower_components": true,
+      "**/.switchboard-cache": true,
+      "**/build": true
+    },
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/.DS_Store": true,
+      "**/.idea": true,
+      "**/.switchboard-cache": true,
+      "**/node_modules": true,
+      "**/.github": true,
+      "**/.vscode": true,
+      "**/artifacts": true,
+      "**/console.log": true,
+      "**/build": true
+    },
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/node_modules/**": true,
+      "**/.switchboard-cache": true,
+      "**/build": true,
+      "**/.idea": true
+    }
+,
+"html.suggest.angular1": false,
+"html.suggest.ionic": false,
+"workbench.editor.enablePreview": false,
+"vsicons.projectDetection.disableDetect": true,
+"editor.renderControlCharacters": true,
+"editor.renderWhitespace": "none",
+"workbench.colorTheme": "Default Light+",
+"workbench.iconTheme": "vscode-icons",
+"window.zoomLevel": 0,
+"javascript.implicitProjectConfig.checkJs": true,
+"vim.disableAnnoyingNeovimMessage": true,
+"editor.formatOnPaste": false,
+"editor.renderIndentGuides": false
 }

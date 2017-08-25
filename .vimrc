@@ -13,16 +13,18 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'rakr/vim-one'
 Plugin 'tpope/vim-fugitive'
-Plugin 'valloric/youcompleteme'
+"Plugin 'valloric/youcompleteme'
 "Plugin 'morhetz/gruvbox'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
 " Plugin 'ryanoasis/vim-devicons'
@@ -31,11 +33,11 @@ Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mhinz/vim-startify'
 "Plugin 'edkolev/tmuxline.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/syntastic'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'scrooloose/syntastic'
 Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'jeaye/color_coded'
+"Plugin 'octol/vim-cpp-enhanced-highlight'
+"Plugin 'jeaye/color_coded'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -122,7 +124,9 @@ set expandtab
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
 
-map <Leader>g :CtrlPMixed<CR>
+"map <Leader>g :CtrlPMixed<CR>
+"map <Leader>g :Files<CR>
+map <Leader>g :Locate /<CR>
 map <Leader>t :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
 
@@ -189,7 +193,6 @@ set relativenumber
 
 " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
 
-let g:ctrlp_cmd = 'CtrlPMixed'
 
 let g:airline#extensions#tabline#enabled = 1
 
@@ -206,7 +209,9 @@ let g:AutoPairsCenterLine=0
 
 let g:airline_powerline_fonts = 1
 
-let g:ctrlp_match_window = 'top,order:ttb,min:3,max:3,results:10'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_match_window = 'top,order:ttb,min:5,max:10,results:10'
+let g:ctrlp_working_path_mode = ''
 
 "let g:ycm_confirm_extra_conf = 0
 
@@ -297,8 +302,8 @@ inoremap ; <esc>A;<esc>
 set clipboard=unnamedplus
 autocmd VimLeave * call system("xclip -selection c", getreg('+'))
 
-autocmd VimEnter * nested :call tagbar#autoopen(1)
-autocmd FileType * nested :call tagbar#autoopen(0)
+"autocmd VimEnter * nested :call tagbar#autoopen(1)
+"autocmd FileType * nested :call tagbar#autoopen(0)
 
 let g:ycm_min_num_of_chars_for_completion = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
