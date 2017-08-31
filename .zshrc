@@ -184,11 +184,28 @@ bindkey -M viins ';' vi-cmd-mode
 bindkey -M vicmd '/' fzf-history-widget
 
 _fzf_compgen_dir() {
-  command locate / 
+  command locate -b "$1" /
 }
 
-_fzf_compgen_path() {
-  command locate / 
+ _fzf_compgen_path() {
+  command locate /
+}
+
+
+cf() {
+  local file
+
+  file="$(locate -Ai -0 / | grep -z -vE '~$' | fzf --read0 -0 -1)"
+
+  if [[ -n $file ]]
+  then
+    if [[ -d $file ]]
+    then
+      cd -- $file
+    else
+      cd -- ${file:h}
+    fi
+  fi
 }
 
 #function zle-line-init zle-keymap-select {
