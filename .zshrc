@@ -3,6 +3,13 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/artem/.oh-my-zsh
+export HISTCONTROL=ignoreboth
+export HIST_FIND_NO_DUPS=on
+
+set -o histfindnodups on
+set -o histignorealldups on
+set -o histignoredups on
+set -o histsavenodups on
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -192,6 +199,16 @@ _fzf_compgen_dir() {
 }
 
 
+fshow() {
+  git log --graph --color=always \
+    --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+    --bind "ctrl-m:execute:
+  (grep -o '[a-f0-9]\{7\}' | head -1 |
+  xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+  {}
+  FZF-EOF"
+}
 cf() {
   local file
 
