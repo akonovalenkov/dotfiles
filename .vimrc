@@ -41,6 +41,8 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'junegunn/goyo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,6 +72,7 @@ endif
 
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
+set whichwrap+=<,>,h,l
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
@@ -364,3 +367,29 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+command W w !sudo tee % > /dev/null
+set lazyredraw
+set magic
+set foldcolumn=1
+set encoding=utf8
+set ffs=unix,dos,mac
+set lbr
+set tw=500
+set wrap
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+map 0 ^
+map <leader>pp :setlocal paste!<cr>
+let g:bufExplorerDefaultHelp=0
+let g:bufExplorerShowRelativePath=1
+let g:bufExplorerFindActive=1
+let g:bufExplorerSortBy='name'
+map <leader>o :BufExplorer<cr>
+let g:goyo_width=100
+let g:goyo_margin_top = 2
+let g:goyo_margin_bottom = 2
+nnoremap <silent> <leader>z :Goyo<cr>
