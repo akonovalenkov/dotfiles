@@ -24,12 +24,12 @@ Plugin 'valloric/youcompleteme'
 "Plugin 'morhetz/gruvbox'
 "Plugin 'altercation/vim-colors-solarized'
 "Plugin 'airblade/vim-gitgutter'
-Plugin 'pangloss/vim-javascript'
+"Plugin 'pangloss/vim-javascript'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
 " Plugin 'ryanoasis/vim-devicons'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'mileszs/ack.vim'
+"Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mhinz/vim-startify'
 "Plugin 'edkolev/tmuxline.vim'
@@ -38,6 +38,9 @@ Plugin 'mhinz/vim-startify'
 Plugin 'NLKNguyen/papercolor-theme'
 "Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'jeaye/color_coded'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -126,7 +129,7 @@ nnoremap P P=`]<C-o>
 
 "map <Leader>g :CtrlPMixed<CR>
 "map <Leader>g :Files<CR>
-map <Leader>g :Locate /<CR>
+map <Leader>g :execute 'Locate' getcwd()<CR>
 map <Leader>t :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
 
@@ -341,4 +344,23 @@ colorscheme PaperColor
 let g:airline_theme='papercolor'
 let g:PaperColor_Dark_Override = { 'background' : '#ffffff' }
 highlight Normal ctermbg=15
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+
+
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
 
