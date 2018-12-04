@@ -344,10 +344,18 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
-set background=light
 colorscheme PaperColor
+set background=light
 let g:airline_theme='papercolor'
-let g:PaperColor_Dark_Override = { 'background' : '#ffffff' }
+
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }
+
 highlight Normal ctermbg=15
 
 " Show just the filename
