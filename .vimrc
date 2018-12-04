@@ -1,4 +1,6 @@
 
+set encoding=utf8
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -376,7 +378,6 @@ command W w !sudo tee % > /dev/null
 set lazyredraw
 set magic
 set foldcolumn=1
-set encoding=utf8
 set ffs=unix,dos,mac
 set lbr
 set tw=500
