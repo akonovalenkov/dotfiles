@@ -31,7 +31,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
 " Plugin 'ryanoasis/vim-devicons'
 Plugin 'jiangmiao/auto-pairs'
-"Plugin 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mhinz/vim-startify'
 "Plugin 'edkolev/tmuxline.vim'
@@ -376,6 +376,8 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
