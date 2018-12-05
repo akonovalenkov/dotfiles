@@ -133,9 +133,7 @@ set expandtab
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
 
-"map <Leader>g :CtrlPMixed<CR>
-"map <Leader>g :Files<CR>
-map <Leader>g :execute 'Locate' getcwd()<CR>
+map <Leader>g :Files<CR>
 map <Leader>t :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
 
