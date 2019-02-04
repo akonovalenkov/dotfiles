@@ -18,7 +18,7 @@
             "after": [ "<ESC>", "$", "\"", "a", "p" ]
         }
     ],
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [",", "g"],
             "commands": [
