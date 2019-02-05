@@ -15,7 +15,7 @@
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": [";"],
-            "after": [ "<ESC>", "$", "\"", "a", "p" ]
+            "after": [ "<Esc>", "A", ";", "<Esc>" ]
         }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -30,15 +30,18 @@
         {
             "before": ["s"],
             "after": ["<leader>", "<leader>", "s"]
-        },
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": [",", "c", "c"],
+            "before": ["<leader>", "c", "c"],
             "after": [],
             "commands": [
                 {
                     "command": "editor.action.blockComment",
                     "args": []
-                }
+                },
+                "extension.vim_escape"
             ]
         }
     ],
@@ -70,8 +73,6 @@
       "**/.idea": true
     }
 ,
-"html.suggest.angular1": false,
-"html.suggest.ionic": false,
 "workbench.editor.enablePreview": false,
 "vsicons.projectDetection.disableDetect": true,
 "editor.renderControlCharacters": true,
@@ -80,7 +81,6 @@
 "workbench.iconTheme": "vscode-icons",
 "window.zoomLevel": 0,
 "javascript.implicitProjectConfig.checkJs": true,
-"vim.disableAnnoyingNeovimMessage": true,
 "editor.formatOnPaste": false,
 "editor.renderIndentGuides": false
 }
