@@ -9,7 +9,7 @@ ln -s $PWD/.tern-config ~/.tern-config
 
 mkdir --parents ~/.config/Code/User
 ln -s $PWD/vscode/settings.json ~/.config/Code/User/settings.json
-
+ln -s $PWD/vscode/settings.json ~/.config/Code/User/keybindings.json
 
 mkdir --parents ~/.config/ranger
 ln -s $PWD/ranger/commands.py ~/.config/ranger/commands.py

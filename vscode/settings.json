@@ -82,5 +82,7 @@
 "window.zoomLevel": 0,
 "javascript.implicitProjectConfig.checkJs": true,
 "editor.formatOnPaste": false,
-"editor.renderIndentGuides": false
+"editor.renderIndentGuides": false,
+"vim.enableNeovim": true,
+"vim.neovimPath": "/usr/bin/nvim"
 }
