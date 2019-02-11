@@ -20,6 +20,7 @@ set smarttab
 let mapleader = ","
 
 map <Leader>g :action SearchEverywhere<CR>
+map <Leader>cc :action CommentByBlockComment<CR><CR>
 map s :action AceJumpAction<CR>
 map <tab> :action PreviousTab<CR>
   
