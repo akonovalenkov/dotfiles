@@ -1,0 +1,17 @@
+[push]
+	default = simple
+[alias]
+  unpushed= log --oneline --decorate  @{u}..HEAD
+  co = checkout
+  ci = commit
+  st = status --ignore-submodules
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+[core]
+	autocrlf = input
+[pull]
+	rebase = true
+[color]
+	ui = auto

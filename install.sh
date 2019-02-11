@@ -2,6 +2,7 @@
 
 ln -s $PWD/.vimrc ~/.vimrc
 ln -s $PWD/.zshrc ~/.zshrc
+ln -s $PWD/.gitconfig ~/.gitconfig
 ln -s $PWD/.tigrc ~/.tigrc
 ln -s $PWD/.ideavimrc ~/.ideavimrc
 ln -s $PWD/.tmux.conf ~/.tmux.conf
