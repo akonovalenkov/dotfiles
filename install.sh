@@ -24,3 +24,5 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 sudo apt install ranger tmux zsh silversearcher-ag tig
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+export FZF_DEFAULT_COMMAND='ag -g "" --nocolor'

@@ -213,7 +213,8 @@ fshow() {
 cf() {
   local file
 
-  file="$(locate -Ai -0 / | grep -z -vE '~$' | fzf --read0 -0 -1)"
+  #file="$(locate -Ai -0 / | grep -z -vE '~$' | fzf --read0 -0 -1)"
+  file=$(fzf)
 
   if [[ -n $file ]]
   then
