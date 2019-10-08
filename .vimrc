@@ -22,6 +22,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'rakr/vim-one'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'valloric/youcompleteme'
 "Plugin 'morhetz/gruvbox'
 "Plugin 'altercation/vim-colors-solarized'
@@ -43,7 +44,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
-Plugin 'jlanzarotta/bufexplorer'
+"Plugin 'jlanzarotta/bufexplorer'
 Plugin 'junegunn/goyo.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 
@@ -124,16 +125,17 @@ endif
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
 
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
 
-map <Leader>g :Files<CR>
+map <Leader>g :GFiles<CR>
+map <Leader>b :Buffers<CR>
 map <Leader>t :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
 
@@ -230,8 +232,8 @@ let g:gitgutter_sign_column_always = 1
 
 
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set ai
 set cin
 " set showmatch
@@ -406,3 +408,4 @@ nnoremap <silent> <leader>z :Goyo<cr>
 
 "cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Rg<Space>
+inoremap <esc> <nop>

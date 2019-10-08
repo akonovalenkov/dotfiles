@@ -59,7 +59,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git mvn per-directory-history)
-plugins=(git vi-mode)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -214,7 +214,7 @@ cf() {
   local file
 
   #file="$(locate -Ai -0 / | grep -z -vE '~$' | fzf --read0 -0 -1)"
-  file=$(fzf)
+  file=$(git ls-files | fzf)
 
   if [[ -n $file ]]
   then
