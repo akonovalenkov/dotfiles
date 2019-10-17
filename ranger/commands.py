@@ -58,7 +58,7 @@ class my_edit(Command):
         return self._tab_directory_content()
 
 
-class fzf_select(Command):
+class fzf_git_files(Command):
     """
     :fzf_select
 
@@ -80,6 +80,7 @@ class fzf_select(Command):
             command="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
                     -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
         command = "fzf +m"
+        command = "git ls-files | fzf"
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
         if fzf.returncode == 0:
@@ -91,7 +92,7 @@ class fzf_select(Command):
 
 
 
-class fzf_locate(Command):
+class fzf_files(Command):
     """
     :fzf_locate
 
