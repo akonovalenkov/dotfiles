@@ -409,4 +409,26 @@ nnoremap <silent> <leader>z :Goyo<cr>
 
 "cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Rg<Space>
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
+
+
+let g:OmniSharp_start_without_solution = 1
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_highlight_types = 2
+"let g:OmniSharp_server_use_mono = 1
+"let g:OmniSharp_server_path = '/home/artem/.omnisharp/omnisharp-roslyn/OmniSharp.exe'
+
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
+
+function MyFunc()
+    let l:is_inside_git_output = system('git rev-parse --is-inside-work-tree 2>&1')
+    let l:is_inside_git = split(l:is_inside_git_output, "\n")[0]
+    if (l:is_inside_git == "true")
+        return ":GFiles\<CR>"
+    else
+        return ":Files\<CR>"
+    endif
+endfunction
+
+nnoremap <expr> <Leader>g MyFunc()

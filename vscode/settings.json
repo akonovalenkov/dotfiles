@@ -3,9 +3,7 @@
     "editor.fontSize": 12,
     "editor.fontFamily": "Consolas",
     "editor.lineNumbers": "relative",
-    "editor.tabSize": 2,
     "editor.roundedSelection": false,
-    "editor.snippetSuggestions": "top",
     "extensions.autoUpdate": false,
     "vim.useSystemClipboard": true,
     "vim.easymotion": true,
@@ -74,15 +72,27 @@
     }
 ,
 "workbench.editor.enablePreview": false,
-"vsicons.projectDetection.disableDetect": true,
 "editor.renderControlCharacters": true,
 "editor.renderWhitespace": "none",
 "workbench.colorTheme": "Default Light+",
-"workbench.iconTheme": "vscode-icons",
-"window.zoomLevel": 0,
+"window.zoomLevel": 1,
 "javascript.implicitProjectConfig.checkJs": true,
 "editor.formatOnPaste": false,
 "editor.renderIndentGuides": false,
 "vim.enableNeovim": true,
-"vim.neovimPath": "/usr/bin/nvim"
+"vim.neovimPath": "/usr/bin/nvim",
+"editor.codeLens": false,
+"editor.suggestSelection": "first",
+"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+"editor.detectIndentation": false,
+"prettier.singleQuote": true,
+"prettier.tabWidth": 4,
+"[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"prettier.printWidth": 120,
+"[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"workbench.iconTheme": "vscode-icons"
 }
