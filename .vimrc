@@ -5,7 +5,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 source ~/.vimrc-plugins
-"set t_Co=256
+set t_Co=256
 
 
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
@@ -158,7 +158,7 @@ let g:AutoPairsCenterLine=0
 "let g:solarized_termcolors=256
 "colorscheme solarized
 
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_match_window = 'top,order:ttb,min:5,max:10,results:10'

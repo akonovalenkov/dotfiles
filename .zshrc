@@ -2,14 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/artem/.oh-my-zsh
-export HISTCONTROL=ignoreboth
-export HIST_FIND_NO_DUPS=on
-
-set -o histfindnodups on
-set -o histignorealldups on
-set -o histignoredups on
-set -o histsavenodups on
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -187,10 +180,6 @@ export PATH="/home/artem/anaconda2/bin:$PATH"
 export LOCATE_PATH="$HOME/enc/.mlocate/mlocate.db"
 
 
-bindkey -v
-bindkey -M viins ';' vi-cmd-mode
-bindkey -M vicmd '/' fzf-history-widget
-
 _fzf_compgen_dir() {
   command locate -b "$1" /
 }
@@ -200,133 +189,5 @@ _fzf_compgen_dir() {
 }
 
 
-fshow() {
-  git log --graph --color=always \
-    --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-    --bind "ctrl-m:execute:
-  (grep -o '[a-f0-9]\{7\}' | head -1 |
-  xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
-  {}
-  FZF-EOF"
-}
-cf() {
-  local file
-
-  if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-      file=$(git ls-files | fzf);
-  else
-      file=$(fzf)
-  fi;
-
-  if [[ -n $file ]]
-  then
-    if [[ -d $file ]]
-    then
-      cd -- $file
-    else
-      cd -- ${file:h}
-    fi
-  fi
-}
-
-clf() {
-  local file
-
-  file="$(locate -Ai -0 / | grep -z -vE '~$' | fzf --read0 -0 -1)"
-
-  if [[ -n $file ]]
-  then
-     if [[ -d $file ]]
-     then
-        cd -- $file
-     else
-        cd -- ${file:h}
-     fi
-  fi
-}
-
-#function zle-line-init zle-keymap-select {
-    #VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
-    #RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-    #zle reset-prompt
-#}
-
-#zle -N zle-line-init
-#zle -N zle-keymap-select
-
-
-ftpane() {
-    local panes current_window current_pane target target_window target_pane
-    panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
-    current_pane=$(tmux display-message -p '#I:#P')
-    current_window=$(tmux display-message -p '#I')
-
-    target=$(echo "$panes" | grep -v "$current_pane" | fzf +m --reverse) || return
-
-    target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
-    target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
-
-    if [[ $current_window -eq $target_window ]]; then
-        tmux select-pane -t ${target_window}.${target_pane}
-    else
-        tmux select-pane -t ${target_window}.${target_pane} &&
-            tmux select-window -t $target_window
-    fi
-}
-
-# fkill - kill processes - list only the ones you can kill. Modified the earlier script.
-fkill() {
-    local pid 
-    if [ "$UID" != "0" ]; then
-        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
-    else
-        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-    fi  
-
-    if [ "x$pid" != "x" ]
-    then
-        echo $pid | xargs kill -${1:-9}
-    fi  
-}
-
-
-# ALT-I - Paste the selected entry from locate output into the command line
-fzf-locate-widget() {
-  local selected
-  if selected=$(locate / | fzf -q "$LBUFFER"); then
-    LBUFFER=$selected
-  fi
-  zle redisplay
-}
-zle     -N    fzf-locate-widget
-bindkey '\ei' fzf-locate-widget
-
-
-
-# Select a docker container to start and attach to
-function da() {
-  local cid
-  cid=$(docker ps -a | sed 1d | fzf -1 -q "$1" | awk '{print $1}')
-
-  [ -n "$cid" ] && docker start "$cid" && docker attach "$cid"
-}
-
-# Select a running docker container to stop
-function ds() {
-    local cid
-    cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
-
-    [ -n "$cid" ] && docker stop "$cid"
-}
-
-
-# Select a docker container to remove
-function drm() {
-    local cid
-    cid=$(docker ps -a | sed 1d | fzf -q "$1" | awk '{print $1}')
-
-    [ -n "$cid" ] && docker rm "$cid"
-}
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.zshrc-extras ] && source ~/.zshrc-extras

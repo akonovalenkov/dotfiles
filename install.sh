@@ -1,10 +1,15 @@
 #!/bin/sh
 
+add-apt-repository universe
+
 apt update
 
 apt install wget vim ranger tmux zsh silversearcher-ag tig
 
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+ln -sf $PWD/.zshrc-extras ~/.zshrc-extras
+echo "[ -f ~/.zshrc-extras ] && source ~/.zshrc-extras" >> ~/.zshrc
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
@@ -16,7 +21,6 @@ ln -sf $PWD/.vimrc ~/.vimrc
 
 vim -u ~/.vimrc-plugins +PluginInstall +qall
 
-ln -sf $PWD/.zshrc ~/.zshrc
 ln -sf $PWD/.gitconfig ~/.gitconfig
 ln -sf $PWD/.tigrc ~/.tigrc
 ln -sf $PWD/.ideavimrc ~/.ideavimrc
