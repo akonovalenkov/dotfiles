@@ -4,15 +4,15 @@ add-apt-repository universe
 
 apt update
 
-apt install wget vim ranger tmux zsh silversearcher-ag tig
+apt install wget vim ranger tmux zsh silversearcher-ag tig htop -y
 
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" "" --unattended
 
 ln -sf $PWD/.zshrc-extras ~/.zshrc-extras
 echo "[ -f ~/.zshrc-extras ] && source ~/.zshrc-extras" >> ~/.zshrc
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install --all --no-bash --no-fish
 
 git clone --depth 1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
