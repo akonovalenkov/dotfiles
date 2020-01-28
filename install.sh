@@ -4,7 +4,7 @@ add-apt-repository universe
 
 apt update
 
-apt install wget vim ranger tmux zsh silversearcher-ag tig htop -y
+apt install tmuxinator wget vim ranger tmux zsh silversearcher-ag tig htop -y
 
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" "" --unattended
 
@@ -37,5 +37,7 @@ ln -sf $PWD/ranger/rc.conf ~/.config/ranger/rc.conf
 ln -sf $PWD/ranger/rifle.conf ~/.config/ranger/rifle.conf
 ln -sf $PWD/ranger/scope.sh ~/.config/ranger/scope.sh
 
+mkdir ~/.tmuxinator
+ln -sf $PWD/tmuxinator/starship.yml ~/.tmuxinator/starship.yml
 
 export FZF_DEFAULT_COMMAND='rg --files';
