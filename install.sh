@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-add-apt-repository universe
+cd "$(dirname "${BASH_SOURCE[0]}")"
 
-apt update
+sudo add-apt-repository universe
 
-apt install tmuxinator wget vim ranger tmux zsh silversearcher-ag tig htop -y
+sudo apt update
+
+sudo apt install tmuxinator wget vim ranger tmux zsh silversearcher-ag tig htop -y
 
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" "" --unattended
 
