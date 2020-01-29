@@ -41,5 +41,3 @@ ln -sf $PWD/ranger/scope.sh ~/.config/ranger/scope.sh
 
 mkdir ~/.tmuxinator
 ln -sf $PWD/tmuxinator/starship.yml ~/.tmuxinator/starship.yml
-
-export FZF_DEFAULT_COMMAND='rg --files';

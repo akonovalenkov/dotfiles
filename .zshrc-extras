@@ -1,9 +1,11 @@
 export EDITOR='vim'
+export FZF_DEFAULT_COMMAND='rg --files';
 
 set -o histfindnodups on
 set -o histignorealldups on
 set -o histignoredups on
 set -o histsavenodups on
+set -o noautocd
 
 
 bindkey -v
