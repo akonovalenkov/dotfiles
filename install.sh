@@ -6,7 +6,7 @@ sudo add-apt-repository universe
 
 sudo apt update
 
-sudo apt install tmuxinator wget vim ranger tmux zsh silversearcher-ag tig htop -y
+sudo apt install tmuxinator wget vim ranger tmux zsh silversearcher-ag tig htop build-essential cmake python3-dev locate -y
 
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" "" --unattended
 
@@ -29,11 +29,11 @@ ln -sf $PWD/.ideavimrc ~/.ideavimrc
 ln -sf $PWD/.tmux.conf ~/.tmux.conf
 ln -sf $PWD/.tern-config ~/.tern-config
 
-mkdir --parents ~/.config/Code/User
+mkdir -p ~/.config/Code/User
 ln -sf $PWD/vscode/settings.json ~/.config/Code/User/settings.json
 ln -sf $PWD/vscode/settings.json ~/.config/Code/User/keybindings.json
 
-mkdir --parents ~/.config/ranger
+mkdir -p ~/.config/ranger
 ln -sf $PWD/ranger/commands.py ~/.config/ranger/commands.py
 ln -sf $PWD/ranger/rc.conf ~/.config/ranger/rc.conf
 ln -sf $PWD/ranger/rifle.conf ~/.config/ranger/rifle.conf
@@ -41,3 +41,6 @@ ln -sf $PWD/ranger/scope.sh ~/.config/ranger/scope.sh
 
 mkdir ~/.tmuxinator
 ln -sf $PWD/tmuxinator/starship.yml ~/.tmuxinator/starship.yml
+
+cd ~/.vim/bundle/youcompleteme
+python3 ./install.py
