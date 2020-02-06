@@ -139,3 +139,34 @@ bindkey -M vicmd -r gu
 bindkey -M vicmd -r gU
 bindkey -M vicmd -r g~~
 bindkey -M vicmd -r guu
+
+function vi-yank-x-clipboard {
+    zle vi-yank
+    echo $CUTBUFFER | clipcopy
+}
+
+zle -N vi-yank-x-clipboard
+
+bindkey -a 'y' vi-yank-x-clipboard
+
+
+
+function vi-put-after-from-x-clipboard () {
+        LBUFFER="${LBUFFER}$(xsel -b -o)"
+        local ret=$?
+        zle reset-prompt
+        return $ret
+}
+
+zle -N vi-put-after-from-x-clipboard
+bindkey -a 'p' vi-put-after-from-x-clipboard
+
+function vi-put-before-from-x-clipboard () {
+    RBUFFER="$(xsel -b -o)${RBUFFER}"
+    local ret=$?
+    zle reset-prompt
+    return $ret
+}
+
+zle -N vi-put-before-from-x-clipboard
+bindkey -a 'P' vi-put-before-from-x-clipboard
