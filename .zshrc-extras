@@ -12,6 +12,8 @@ bindkey -v
 bindkey -M viins ';' vi-cmd-mode
 bindkey -M vicmd '/' fzf-history-widget
 
+bindkey -M vicmd 'v' visual-mode
+
 cf() {
     local file
 
@@ -122,3 +124,4 @@ function drm() {
 
     [ -n "$cid" ] && docker rm "$cid"
 }
+
