@@ -373,3 +373,15 @@ function MyFunc()
 endfunction
 
 nnoremap <expr> <Leader>g MyFunc()
+
+
+vnoremap p "0p
+vnoremap P "0P
+vnoremap y "0y
+vnoremap d "0d
+
+nnoremap p "0p
+nnoremap P "0P
+nnoremap y "0y
+nnoremap d "0d
+
