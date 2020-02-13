@@ -376,3 +376,5 @@ nnoremap <expr> <Leader>g MyFunc()
 nnoremap <Leader>l :Locate /<cr>
 
 xnoremap <expr> p 'pgv"'.v:register.'y'
+
+let g:NERDTreeWinSize=50
