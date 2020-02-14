@@ -10,6 +10,8 @@ sudo apt install tmuxinator wget vim ranger tmux zsh silversearcher-ag tig htop 
 
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" "" --unattended
 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
 ln -sf $PWD/.zshrc-extras ~/.zshrc-extras
 echo "[ -f ~/.zshrc-extras ] && source ~/.zshrc-extras" >> ~/.zshrc
 
