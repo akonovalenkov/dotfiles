@@ -52,7 +52,7 @@ ZSH_THEME="frisk"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git mvn per-directory-history)
-plugins=(git z colored-man-pages ripgrep)
+plugins=(git z colored-man-pages ripgrep zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
