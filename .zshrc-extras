@@ -10,7 +10,9 @@ set -o noautocd
 
 bindkey -v
 bindkey -M viins ';' vi-cmd-mode
+bindkey -M viins ',' vi-cmd-mode
 bindkey -M viins '^T' fzf-file-widget
+bindkey -M vicmd 'g' fzf-history-widget
 bindkey -M vicmd '/' fzf-history-widget
 
 bindkey -M vicmd 'v' visual-mode
@@ -126,3 +128,14 @@ function drm() {
     [ -n "$cid" ] && docker rm "$cid"
 }
 
+
+bindkey -M vicmd -r gUU
+bindkey -M vicmd -r gg
+bindkey -M vicmd -r gE
+bindkey -M vicmd -r ge
+bindkey -M vicmd -r ga
+bindkey -M vicmd -r g~
+bindkey -M vicmd -r gu
+bindkey -M vicmd -r gU
+bindkey -M vicmd -r g~~
+bindkey -M vicmd -r guu
