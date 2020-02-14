@@ -10,6 +10,7 @@ set -o noautocd
 
 bindkey -v
 bindkey -M viins ';' vi-cmd-mode
+bindkey -M viins '^T' fzf-file-widget
 bindkey -M vicmd '/' fzf-history-widget
 
 bindkey -M vicmd 'v' visual-mode
