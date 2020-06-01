@@ -94,5 +94,9 @@
 "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
 },
-"workbench.iconTheme": "vscode-icons"
+"workbench.iconTheme": "vscode-icons",
+"[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"debug.node.autoAttach": "on"
 }

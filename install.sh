@@ -22,6 +22,7 @@ git clone --depth 1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vu
 
 ln -sf $PWD/.vimrc-plugins ~/.vimrc-plugins
 ln -sf $PWD/.vimrc ~/.vimrc
+ln -sf $PWD/.vim/coc-settings.json ~/.vim/coc-settings.json
 
 vim -u ~/.vimrc-plugins +PluginInstall +qall
 
