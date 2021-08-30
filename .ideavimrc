@@ -30,5 +30,5 @@ map <tab> :action PreviousTab<CR>
 "nnoremap <buffer> <silent> k <nop>
  
 
-inoremap ; <esc>A;<esc>
+inoremap ; <esc>
 set clipboard+=unnamed

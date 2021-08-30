@@ -1,5 +1,6 @@
 export EDITOR='vim'
 export FZF_DEFAULT_COMMAND='rg --files';
+export LC_ALL=en_US.UTF-8
 
 set -o histfindnodups on
 set -o histignorealldups on
@@ -170,3 +171,9 @@ function vi-put-before-from-x-clipboard () {
 
 zle -N vi-put-before-from-x-clipboard
 bindkey -a 'P' vi-put-before-from-x-clipboard
+
+unalias z 2> /dev/null
+z() {
+  [ $# -gt 0 ] && _z "$*" && return
+  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+}

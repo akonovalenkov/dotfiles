@@ -118,9 +118,9 @@ map s <Plug>(easymotion-overwin-w)
 map <Leader>s <Plug>(easymotion-s2)
 
 
-inoremap ; <esc>A;<esc>
+inoremap ; <esc>
 
-set clipboard^=unnamedplus
+set clipboard^=unnamed,unnamedplus
 autocmd VimLeave * call system("xclip -selection c", getreg('+'))
 
 colorscheme PaperColor
