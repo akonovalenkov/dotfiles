@@ -2,11 +2,11 @@
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-sudo add-apt-repository universe
+#sudo add-apt-repository universe
 
-sudo apt update
+#sudo apt update
 
-sudo apt install tmuxinator wget vim ranger tmux zsh silversearcher-ag tig htop build-essential cmake python3-dev locate -y
+#sudo apt install tmuxinator wget vim ranger tmux zsh silversearcher-ag tig htop build-essential cmake python3-dev locate -y
 
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" "" --unattended
 
@@ -26,11 +26,11 @@ ln -sf $PWD/.vim/coc-settings.json ~/.vim/coc-settings.json
 
 vim -u ~/.vimrc-plugins +PluginInstall +qall
 
-ln -sf $PWD/.gitconfig ~/.gitconfig
+#ln -sf $PWD/.gitconfig ~/.gitconfig
 ln -sf $PWD/.tigrc ~/.tigrc
-ln -sf $PWD/.ideavimrc ~/.ideavimrc
+#ln -sf $PWD/.ideavimrc ~/.ideavimrc
 ln -sf $PWD/.tmux.conf ~/.tmux.conf
-ln -sf $PWD/.tern-config ~/.tern-config
+#ln -sf $PWD/.tern-config ~/.tern-config
 
 mkdir -p ~/.config/Code/User
 ln -sf $PWD/vscode/settings.json ~/.config/Code/User/settings.json
@@ -45,5 +45,5 @@ ln -sf $PWD/ranger/scope.sh ~/.config/ranger/scope.sh
 mkdir ~/.tmuxinator
 ln -sf $PWD/tmuxinator/starship.yml ~/.tmuxinator/starship.yml
 
-cd ~/.vim/bundle/youcompleteme
-python3 ./install.py
+#cd ~/.vim/bundle/youcompleteme
+#python3 ./install.py

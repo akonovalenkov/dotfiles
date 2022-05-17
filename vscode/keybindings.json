@@ -19,5 +19,10 @@
     "key": "ctrl+.",
     "command": "-problems.action.showQuickFixes",
     "when": "problemFocus"
+  },
+  {
+        "key": ";",
+        "command": "vscode-neovim.escape",
+        "when": "neovim.mode == insert && editorTextFocus"
   }
 ]

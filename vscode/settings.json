@@ -1,102 +1,116 @@
 {
-    "editor.cursorStyle": "line",
-    "editor.fontSize": 12,
-    "editor.fontFamily": "Consolas",
-    "editor.lineNumbers": "relative",
-    "editor.roundedSelection": false,
-    "extensions.autoUpdate": false,
-    "vim.useSystemClipboard": true,
-    "vim.easymotion": true,
-    "vim.hlsearch": true,
-    "vim.leader": ",",
-    "editor.cursorBlinking": "solid",
-    "vim.insertModeKeyBindingsNonRecursive": [
-        {
-            "before": [";"],
-            "after": [ "<Esc>", "A", ";", "<Esc>" ]
-        }
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [",", "g"],
-            "commands": [
-                {
-                    "command": "workbench.action.quickOpen"
-                }
-            ]
-        },
-        {
-            "before": ["s"],
-            "after": ["<leader>", "<leader>", "s"]
-        }
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": ["<leader>", "c", "c"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.blockComment",
-                    "args": []
-                },
-                "extension.vim_escape"
-            ]
-        }
-    ],
-    "search.exclude": {
-      "**/node_modules": true,
-      "**/bower_components": true,
-      "**/.switchboard-cache": true,
-      "**/build": true
-    },
-    "files.exclude": {
-      "**/.git": true,
-      "**/.svn": true,
-      "**/.hg": true,
-      "**/.DS_Store": true,
-      "**/.idea": true,
-      "**/.switchboard-cache": true,
-      "**/node_modules": true,
-      "**/.github": true,
-      "**/.vscode": true,
-      "**/artifacts": true,
-      "**/console.log": true,
-      "**/build": true
-    },
-    "files.watcherExclude": {
-      "**/.git/objects/**": true,
-      "**/node_modules/**": true,
-      "**/.switchboard-cache": true,
-      "**/build": true,
-      "**/.idea": true
+  "editor.cursorStyle": "line",
+  "editor.fontFamily": "YaHei Consolas Hybrid",
+  "editor.lineNumbers": "relative",
+  "editor.roundedSelection": false,
+  "extensions.autoUpdate": false,
+  "vim.useSystemClipboard": true,
+  "vim.easymotion": true,
+  "vim.hlsearch": true,
+  "vim.leader": ",",
+  "editor.cursorBlinking": "solid",
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": [";"],
+      "after": ["<Esc>", "A", ";", "<Esc>"]
     }
-,
-"workbench.editor.enablePreview": false,
-"editor.renderControlCharacters": true,
-"editor.renderWhitespace": "none",
-"workbench.colorTheme": "Default Light+",
-"window.zoomLevel": 1,
-"javascript.implicitProjectConfig.checkJs": true,
-"editor.formatOnPaste": false,
-"editor.renderIndentGuides": false,
-"vim.enableNeovim": true,
-"vim.neovimPath": "/usr/bin/nvim",
-"editor.codeLens": false,
-"editor.suggestSelection": "first",
-"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-"editor.detectIndentation": false,
-"prettier.singleQuote": true,
-"prettier.tabWidth": 4,
-"[html]": {
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [",", "g"],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen"
+        }
+      ]
+    },
+    {
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "s"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "c", "c"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.blockComment",
+          "args": []
+        },
+        "extension.vim_escape"
+      ]
+    }
+  ],
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.switchboard-cache": true,
+    "**/build": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/.idea": true,
+    "**/.switchboard-cache": true,
+    "**/node_modules": true,
+    "**/.github": true,
+    "**/.vscode": true,
+    "**/artifacts": true,
+    "**/console.log": true,
+    "**/build": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
+    "**/.switchboard-cache": true,
+    "**/build": true,
+    "**/.idea": true
+  },
+  "workbench.editor.enablePreview": false,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "none",
+  "window.zoomLevel": 1,
+  "editor.formatOnPaste": false,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "editor.codeLens": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.detectIndentation": false,
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"prettier.printWidth": 120,
-"[typescript]": {
+  },
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"workbench.iconTheme": "vscode-icons",
-"[javascript]": {
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"debug.node.autoAttach": "on"
+  },
+  "debug.node.autoAttach": "on",
+  "vscode-neovim.neovimExecutablePaths.linux": "/home/artem/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.linux": "/home/artem/init.vim",
+  "editor.fontSize": 13,
+  "editor.lineHeight": 1.2,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "javascript.preferences.useAliasesForRenames": false,
+  "typescript.preferences.useAliasesForRenames": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "files.autoSave": "afterDelay",
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.colorTheme": "Default Light+",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "emmet.showAbbreviationSuggestions": false,
+  "emmet.showExpandedAbbreviation": "never",
+  "rust-analyzer.inlayHints.enable": false,
+  "editor.guides.indentation": false
 }
