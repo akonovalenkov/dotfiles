@@ -49,18 +49,23 @@
     "**/build": true
   },
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
     "**/.DS_Store": true,
-    "**/.idea": true,
-    "**/.switchboard-cache": true,
-    "**/node_modules": true,
+    "**/.git": true,
     "**/.github": true,
+    "**/.hg": true,
+    "**/.idea": true,
+    "**/.svn": true,
+    "**/.switchboard-cache": true,
+    "**/.turbo": true,
     "**/.vscode": true,
+    "**/*.tsbuildinfo": true,
     "**/artifacts": true,
+    "**/build": true,
     "**/console.log": true,
-    "**/build": true
+    "**/dist": true,
+    "**/node_modules": true,
+    "deploy": true,
+    "tsconfig.tsbuildinfo": true
   },
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -105,12 +110,24 @@
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "files.autoSave": "afterDelay",
   "editor.bracketPairColorization.enabled": true,
-  "workbench.colorTheme": "Default Light+",
+  "workbench.colorTheme": "Default Light Modern",
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "emmet.showAbbreviationSuggestions": false,
   "emmet.showExpandedAbbreviation": "never",
   "rust-analyzer.inlayHints.enable": false,
-  "editor.guides.indentation": false
+  "editor.guides.indentation": false,
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-11",
+      "path": "/home/artem/Downloads/android-studio/android-studio-2020.3.1.25/jre"
+    }
+  ],
+  "kotlin.java.home": "/home/artem/Downloads/android-studio/android-studio-2020.3.1.25/jre",
+  "[kotlin]": {
+    "editor.defaultFormatter": "fwcd.kotlin"
+  },
+  "kotlin.debugAdapter.path": "250",
+  "editor.accessibilitySupport": "off"
 }

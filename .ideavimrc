@@ -23,6 +23,7 @@ map <Leader>g :action SearchEverywhere<CR>
 map <Leader>cc :action CommentByBlockComment<CR><CR>
 map s :action AceJumpAction<CR>
 map <tab> :action PreviousTab<CR>
+nnoremap <CR> :noh<CR><CR>
   
 "nnoremap <buffer> <silent> l <nop>
 "nnoremap <buffer> <silent> h <nop>
