@@ -27,3 +27,4 @@ vim.opt.background = 'light'
 
 vim.opt.clipboard = 'unnamed,unnamedplus'
 
+vim.opt.termguicolors = true
