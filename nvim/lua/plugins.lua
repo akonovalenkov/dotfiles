@@ -106,4 +106,30 @@ return require('packer').startup(function(use)
     end
   }
 
+  use 'tpope/vim-fugitive'
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup {
+        toggler = {
+          line = '<leader>cc',
+          block = '<leader>cb'
+        },
+        opleader = {
+          line = '<leader>cc',
+          block = '<leader>cb'
+        }
+      }
+
+    end
+  }
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+
 end)

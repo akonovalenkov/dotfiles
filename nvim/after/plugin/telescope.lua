@@ -35,6 +35,12 @@ vim.keymap.set('n', '<leader>f', builtin.find_files, {})
 vim.keymap.set('n', '<leader>g', builtin.git_files, {})
 vim.keymap.set('n', '<leader>a', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+vim.keymap.set('n', '<leader>d', builtin.diagnostics, {})
+vim.keymap.set('n', '<leader>s', builtin.lsp_dynamic_workspace_symbols, {})
+vim.keymap.set('n', 'gr', builtin.lsp_references, {})
+vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
+vim.keymap.set('n', 'gD', builtin.lsp_type_definitions, {})
+vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
 
 vim.keymap.set('n', '<leader>e', ":Telescope file_browser path=%:p:h select_buffer=true<cr>", {
   noremap = true

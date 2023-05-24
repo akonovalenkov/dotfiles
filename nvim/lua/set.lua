@@ -28,3 +28,11 @@ vim.opt.background = 'light'
 vim.opt.clipboard = 'unnamed,unnamedplus'
 
 vim.opt.termguicolors = true
+
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+vim.wo.signcolumn = 'yes'
+
+vim.o.completeopt = 'menuone,noselect'
+

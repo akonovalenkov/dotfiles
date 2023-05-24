@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "vimdoc", "vim", "lua", "javascript", "typescript", "rust", "c", "query" },
+  ensure_installed = { "vimdoc", "vim", "lua", "javascript", "typescript", "tsx", "python", "rust", "c", "query" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -21,3 +21,4 @@ require'nvim-treesitter.configs'.setup {
 }
 
 vim.keymap.set('n', 'gh', vim.lsp.buf.hover, {})
+vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, {})
