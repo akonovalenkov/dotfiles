@@ -89,11 +89,20 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
 
   use {
-    'akinsho/bufferline.nvim',
-    tag = "*",
-    requires = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require("bufferline").setup{}
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function ()
+      require('lualine').setup {
+        options = {
+          theme = 'Tomorrow',
+          disabled_filetypes = { 'packer', 'NVimTree' },
+          ignore_focus = { 'packer', 'NvimTree' },
+          globalstatus = true,
+        },
+        tabline = {
+          lualine_a = { 'buffers' }
+        },
+      }
     end
   }
 

@@ -19,3 +19,5 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+vim.keymap.set('n', 'gh', vim.lsp.buf.hover, {})
