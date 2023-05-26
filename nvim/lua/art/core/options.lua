@@ -1,5 +1,8 @@
 vim.g.mapleader = ','
 
+vim.o.timeout = true
+vim.o.timeoutlen = 300
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
