@@ -14,8 +14,9 @@ local plugins = {
   require('art.plugins.comment'),
   require('art.plugins.gitsigns'),
   require('art.plugins.dashboard'),
-  require('art.plugins.lsp-signature'),
+  -- require('art.plugins.lsp-signature'),
   require('art.plugins.lsp-saga'),
+  require('art.plugins.noice'),
 }
 
 
