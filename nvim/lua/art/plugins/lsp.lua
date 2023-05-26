@@ -13,9 +13,15 @@ local plugin = {
     {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
     -- Autocompletion
-    {'hrsh7th/nvim-cmp'},     -- Required
-    {'hrsh7th/cmp-nvim-lsp'}, -- Required
-    {'L3MON4D3/LuaSnip'},     -- Required
+    {'hrsh7th/nvim-cmp'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {
+      'L3MON4D3/LuaSnip',
+      dependencies = { "rafamadriz/friendly-snippets", 'saadparwaiz1/cmp_luasnip' }
+    },
+    {'hrsh7th/cmp-path'},
+    {'hrsh7th/cmp-buffer'},
+    {'hrsh7th/cmp-cmdline'},
   },
   config = function()
     local lsp = require('lsp-zero').preset({})
@@ -41,8 +47,37 @@ local plugin = {
       },
       mapping = {
         ['<Tab>'] = cmp.mapping.confirm({select = true}),
+      },
+      sources = cmp.config.sources({
+        { name = 'luasnip' },
+        { name = 'nvim_lsp' },
+        { name = 'path' },
+        { name = 'buffer' },
+      }),
+    })
+
+    require("luasnip.loaders.from_vscode").lazy_load()
+
+
+    -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+    cmp.setup.cmdline({ '/', '?' }, {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
       }
     })
+
+    -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'path' }
+      }, {
+        { name = 'cmdline' }
+      })
+    })
+
+
     vim.keymap.set('n', 'gh', vim.lsp.buf.hover, {})
     vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, {})
   end
