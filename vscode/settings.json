@@ -129,5 +129,6 @@
     "editor.defaultFormatter": "fwcd.kotlin"
   },
   "kotlin.debugAdapter.path": "250",
-  "editor.accessibilitySupport": "off"
+  "editor.accessibilitySupport": "off",
+  "vscode-neovim.neovimClean": true
 }
