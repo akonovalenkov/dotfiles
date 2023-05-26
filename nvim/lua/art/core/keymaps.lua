@@ -1,2 +1,2 @@
-vim.keymap.set("i", ";", "<esc>")
+vim.keymap.set({"i", "v"}, ";", "<esc>")
 

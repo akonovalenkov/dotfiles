@@ -61,7 +61,6 @@ local plugin = {
 
     -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline({ '/', '?' }, {
-      mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = 'buffer' }
       }
@@ -69,14 +68,12 @@ local plugin = {
 
     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline(':', {
-      mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
         { name = 'path' }
       }, {
         { name = 'cmdline' }
       })
     })
-
 
     vim.keymap.set('n', 'gh', vim.lsp.buf.hover, {})
     vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, {})
