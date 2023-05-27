@@ -77,6 +77,7 @@ local plugin = {
 
     vim.keymap.set('n', 'gh', vim.lsp.buf.hover, {})
     vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, {})
+    vim.keymap.set('n', '=', vim.lsp.buf.format, {})
     vim.keymap.set('n', '<leader>r', vim.lsp.buf.code_action, {})
   end
 }

@@ -18,6 +18,7 @@
   "neovim-session-manager": { "branch": "master", "commit": "fd92e73506601a48adb843cdc0a15f2e63513754" },
   "noice.nvim": { "branch": "main", "commit": "1478f7295806d354e7689edc2a58f3bc2e697f78" },
   "nui.nvim": { "branch": "main", "commit": "698e75814cd7c56b0dd8af4936bcef2d13807f3c" },
+  "null-ls.nvim": { "branch": "main", "commit": "77e53bc3bac34cc273be8ed9eb9ab78bcf67fa48" },
   "nvim-autopairs": { "branch": "master", "commit": "59df87a84c80a357ca8d8fe86e451b93ac476ccc" },
   "nvim-cmp": { "branch": "main", "commit": "a0225043ab823fcad8d0d802e276d9838fb48c30" },
   "nvim-lspconfig": { "branch": "master", "commit": "465042c0f786992212284311ebb5da1f89479774" },
