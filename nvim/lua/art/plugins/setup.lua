@@ -17,6 +17,7 @@ local plugins = {
   -- require('art.plugins.lsp-signature'),
   require('art.plugins.lsp-saga'),
   require('art.plugins.noice'),
+  require('art.plugins.session-manager'),
 }
 
 
