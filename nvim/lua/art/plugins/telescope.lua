@@ -52,12 +52,14 @@ local plugin = {
 
 
     telescope.load_extension('fzf')
+    telescope.load_extension('ui-select')
     -- telescope.load_extension('file_browser')
   end,
 
   dependencies = {
     'nvim-lua/plenary.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    {'nvim-telescope/telescope-ui-select.nvim' },
     -- "nvim-telescope/telescope-file-browser.nvim"
   }
 }

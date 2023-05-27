@@ -13,7 +13,7 @@ local plugin = {
         }
       })
 
-      vim.keymap.set({"n","v"}, "<leader>r", "<cmd>Lspsaga code_action<CR>")
+      -- vim.keymap.set({"n","v"}, "<leader>r", "<cmd>Lspsaga code_action<CR>")
     end
   }
 
