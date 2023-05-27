@@ -2,6 +2,7 @@ local lazy = require("lazy")
 
 local plugins = {
   'pappasam/papercolor-theme-slim',
+ 'Mofiqul/vscode.nvim',
   require('art.plugins.which-key'),
   require('art.plugins.autopairs'),
   require('art.plugins.telescope'),

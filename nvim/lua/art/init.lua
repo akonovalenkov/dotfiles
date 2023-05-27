@@ -1,5 +1,5 @@
 require("art.core")
 require("art.plugins")
 
-vim.cmd [[colorscheme PaperColorSlim]]
+vim.cmd [[colorscheme vscode]]
 
