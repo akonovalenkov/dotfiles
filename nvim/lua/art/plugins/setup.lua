@@ -7,6 +7,7 @@ local plugins = {
   require('art.plugins.autopairs'),
   require('art.plugins.telescope'),
   require('art.plugins.treesitter'),
+  require('art.plugins.treesitter-textobjects'),
   require('art.plugins.lsp'),
   require('art.plugins.tmux'),
   require('art.plugins.tree'),
@@ -20,6 +21,7 @@ local plugins = {
   require('art.plugins.noice'),
   require('art.plugins.session-manager'),
   require('art.plugins.null-ls'),
+  require('art.plugins.surround'),
 }
 
 
