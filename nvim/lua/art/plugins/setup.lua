@@ -1,6 +1,7 @@
 local lazy = require("lazy")
 
 local plugins = {
+  require('art.plugins.neodev'),
   'pappasam/papercolor-theme-slim',
   'Mofiqul/vscode.nvim',
   require('art.plugins.which-key'),
