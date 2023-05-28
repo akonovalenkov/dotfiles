@@ -79,6 +79,10 @@ local plugin = {
     vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, {})
     vim.keymap.set('n', '=', vim.lsp.buf.format, {})
     vim.keymap.set('n', '<leader>r', vim.lsp.buf.code_action, {})
+    vim.keymap.set('i', '<c-space>', vim.lsp.buf.completion, {})
+    vim.keymap.set('n', 'gn', vim.diagnostic.goto_next, {})
+    vim.keymap.set('n', 'gp', vim.diagnostic.goto_prev, {})
+    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, {})
   end
 }
 

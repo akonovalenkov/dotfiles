@@ -13,12 +13,12 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
@@ -38,4 +38,6 @@ vim.o.smartcase = true
 vim.wo.signcolumn = 'yes'
 
 vim.o.completeopt = 'menuone,noselect'
+
+vim.o.list = true
 
