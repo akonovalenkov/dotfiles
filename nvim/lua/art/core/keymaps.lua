@@ -8,27 +8,25 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set('n', '<cr>', ':noh<cr><cr>')
 
-vim.keymap.set('n', '<leader>q', function ()
-  local tree = require('nvim-tree.api').tree
-  local buffer = vim.api.nvim_get_current_buf()
-  -- vim.cmd('confirm bd ' .. buffer)
-  tree.close()
-  vim.api.nvim_buf_delete(buffer, {})
-  tree.toggle({
-    focus = false,
-    find_file = true
-  })
-end)
-
 -- vim.keymap.set('n', '<leader>q', function ()
 --   local tree = require('nvim-tree.api').tree
 --   local buffer = vim.api.nvim_get_current_buf()
---   if vim.bo.buftype == ""  then
---     print("normal buftype")
---     -- vim.cmd("bp<cr>:confirm bd #<cr>")
---     vim.cmd("bp")
---     vim.cmd("confirm bd #")
---   else
---     vim.cmd("q")
---   end
+--   -- vim.cmd('confirm bd ' .. buffer)
+--   tree.close()
+--   vim.api.nvim_buf_delete(buffer, {})
+--   tree.toggle({
+--     focus = false,
+--     find_file = true
+--   })
 -- end)
+
+vim.keymap.set('n', '<leader>q', function ()
+  local tree = require('nvim-tree.api').tree
+  local buffer = vim.api.nvim_get_current_buf()
+  if vim.bo.buftype == ""  then
+    vim.cmd("confirm bd")
+    vim.cmd("bp")
+  else
+    vim.cmd("q")
+  end
+end)
