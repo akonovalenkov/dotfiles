@@ -1,4 +1,4 @@
-vim.g.mapleader = ','
+vim.g.mapleader = ","
 
 vim.o.timeout = true
 vim.o.timeoutlen = 300
@@ -26,18 +26,19 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
-vim.opt.background = 'light'
+vim.opt.background = "light"
 
-vim.opt.clipboard = 'unnamed,unnamedplus'
+vim.opt.clipboard = "unnamed,unnamedplus"
 
 vim.opt.termguicolors = true
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = "menuone,noselect"
 
 vim.o.list = true
 
+vim.o.splitbelow = true
