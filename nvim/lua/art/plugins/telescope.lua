@@ -31,6 +31,9 @@ local plugin = {
           hijack_netrw = true,
           initial_mode = "normal",
         },
+        ["ui-select"] = {
+          require("telescope.themes").get_cursor({}),
+        },
       },
     })
 
