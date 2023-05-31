@@ -1,6 +1,6 @@
 vim.keymap.set({ "i", "v" }, ";", "<esc>")
-vim.keymap.set({ "n", "v" }, "<leader>qq", ":confirm qall<cr>")
-vim.keymap.set({ "n", "v" }, "<leader>w", ":w<cr>")
+vim.keymap.set({ "n", "v" }, "<leader>qq", "<cmd>confirm qall<cr>")
+vim.keymap.set({ "n", "v" }, "<leader>w", "<cmd>w<cr>")
 vim.keymap.set({ "n", "v" }, "<leader>x", ":")
 vim.keymap.set("n", "0", "^")
 vim.keymap.set(
@@ -15,6 +15,6 @@ vim.keymap.set(
   "v:count == 0 ? 'gj' : 'j'",
   { expr = true, silent = true }
 )
-vim.keymap.set("n", "<cr>", ":noh<cr><cr>")
-vim.keymap.set("n", "gn", ":cn<cr>", {})
-vim.keymap.set("n", "gp", ":cp<cr>", {})
+vim.keymap.set("n", "<cr>", "<cmd>noh<cr><cr>")
+vim.keymap.set("n", "gn", "<cmd>cn<cr>", {})
+vim.keymap.set("n", "gp", "<cmd>cp<cr>", {})

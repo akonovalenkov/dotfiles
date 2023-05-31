@@ -1,7 +1,7 @@
 local plugin = {
-  'nvim-tree/nvim-tree.lua',
+  "nvim-tree/nvim-tree.lua",
   dependencies = {
-    'nvim-tree/nvim-web-devicons'
+    "nvim-tree/nvim-web-devicons",
   },
   config = function()
     require("nvim-tree").setup({
@@ -10,25 +10,30 @@ local plugin = {
         -- update_root = true,
       },
       view = {
-        width = 36
-      }
+        width = 36,
+      },
     })
 
-    vim.keymap.set('n', '<leader>e', ":NvimTreeFindFile<cr>", {})
-    vim.keymap.set('n', '<leader>t', function ()
-      require('nvim-tree.api').tree.toggle({focus = false, find_find = true})
-    end, {})
+    vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFile<cr>", {})
+    vim.keymap.set(
+      "n",
+      "<leader>t",
+      function()
+        require("nvim-tree.api").tree.toggle({ focus = false, find_find = true })
+      end,
+      {}
+    )
 
-    local config_group = vim.api.nvim_create_augroup('MyConfigGroup', {})
+    local config_group = vim.api.nvim_create_augroup("MyConfigGroup", {})
 
-    vim.api.nvim_create_autocmd({ 'User' }, {
+    vim.api.nvim_create_autocmd({ "User" }, {
       pattern = "SessionLoadPost",
       group = config_group,
       callback = function()
-        require('nvim-tree.api').tree.toggle({focus = false, find_file = true})
+        require("nvim-tree.api").tree.toggle({ focus = false, find_file = true })
       end,
     })
-  end
+  end,
 }
 
 return plugin

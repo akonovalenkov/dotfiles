@@ -1,5 +1,4 @@
 require("art.core")
 require("art.plugins")
 
-vim.cmd [[colorscheme vscode]]
-
+vim.cmd([[colorscheme vscode]])
