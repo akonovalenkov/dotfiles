@@ -1,4 +1,3 @@
-
 local plugin = {
   "folke/noice.nvim",
   event = "VeryLazy",
@@ -13,7 +12,7 @@ local plugin = {
     --   If not available, we use `mini` as the fallback
     "rcarriga/nvim-notify",
   },
-  config = function ()
+  config = function()
     require("noice").setup({
       lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -21,6 +20,32 @@ local plugin = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true,
+        },
+      },
+      routes = {
+        {
+          filter = {
+            event = "lsp",
+            kind = "progress",
+            find = "code_action",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "lsp",
+            kind = "progress",
+            find = "diagnostics",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "lsp",
+            kind = "progress",
+            find = "formatting",
+          },
+          opts = { skip = true },
         },
       },
       -- you can enable a preset for easier configuration
@@ -31,8 +56,17 @@ local plugin = {
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = false, -- add a border to hover docs and signature help
       },
+      messages = {
+        view = "mini",
+      },
+      commands = {
+        history = {
+          view = "popup",
+          filter_opts = { reverse = true },
+        },
+      },
     })
-  end
+  end,
 }
 
 return plugin
