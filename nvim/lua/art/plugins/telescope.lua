@@ -25,6 +25,9 @@ local plugin = {
         live_grep = {
           additional_args = { "-L" },
         },
+        buffers = {
+          sort_lastused = true,
+        },
       },
       extensions = {
         file_browser = {

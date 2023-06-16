@@ -10,7 +10,7 @@ local plugin = {
         -- update_root = true,
       },
       view = {
-        width = 36,
+        width = 42,
       },
     })
 
