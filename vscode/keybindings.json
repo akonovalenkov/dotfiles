@@ -21,8 +21,34 @@
     "when": "problemFocus"
   },
   {
-        "key": ";",
-        "command": "vscode-neovim.escape",
-        "when": "neovim.mode == insert && editorTextFocus"
+    "key": ";",
+    "command": "vscode-neovim.escape",
+    "when": "neovim.mode == insert && editorTextFocus"
+  },
+  {
+    "key": "o",
+    "command": "explorer.openAndPassFocus",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-explorer.openAndPassFocus",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
+  },
+  {
+    "key": "` l",
+    "command": "workbench.action.focusNextPart"
+  },
+  {
+    "key": "f6",
+    "command": "-workbench.action.focusNextPart"
+  },
+  {
+    "key": "` h",
+    "command": "workbench.action.focusPreviousPart"
+  },
+  {
+    "key": "shift+f6",
+    "command": "-workbench.action.focusPreviousPart"
   }
 ]

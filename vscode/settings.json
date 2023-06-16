@@ -9,39 +9,6 @@
   "vim.hlsearch": true,
   "vim.leader": ",",
   "editor.cursorBlinking": "solid",
-  "vim.insertModeKeyBindingsNonRecursive": [
-    {
-      "before": [";"],
-      "after": ["<Esc>", "A", ";", "<Esc>"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [",", "g"],
-      "commands": [
-        {
-          "command": "workbench.action.quickOpen"
-        }
-      ]
-    },
-    {
-      "before": ["s"],
-      "after": ["<leader>", "<leader>", "s"]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "c", "c"],
-      "after": [],
-      "commands": [
-        {
-          "command": "editor.action.blockComment",
-          "args": []
-        },
-        "extension.vim_escape"
-      ]
-    }
-  ],
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
@@ -130,5 +97,7 @@
   },
   "kotlin.debugAdapter.path": "250",
   "editor.accessibilitySupport": "off",
-  "vscode-neovim.neovimClean": true
+  "vscode-neovim.neovimClean": true,
+  "javascript.preferGoToSourceDefinition": true,
+  "typescript.preferGoToSourceDefinition": true
 }
