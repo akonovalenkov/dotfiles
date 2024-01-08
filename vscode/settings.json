@@ -74,7 +74,7 @@
   "editor.formatOnSave": true,
   "javascript.preferences.useAliasesForRenames": false,
   "typescript.preferences.useAliasesForRenames": false,
-  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
   "files.autoSave": "afterDelay",
   "editor.bracketPairColorization.enabled": true,
   "workbench.colorTheme": "Default Light Modern",
@@ -99,5 +99,23 @@
   "editor.accessibilitySupport": "off",
   "vscode-neovim.neovimClean": true,
   "javascript.preferGoToSourceDefinition": true,
-  "typescript.preferGoToSourceDefinition": true
+  "typescript.preferGoToSourceDefinition": true,
+  "rust-analyzer.lens.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "git.openRepositoryInParentFolders": "never",
+  "cSpell.userWords": [
+    "blockhash",
+    "devnet",
+    "Keypair",
+    "merkle",
+    "Metaplex",
+    "oneofs",
+    "proto",
+    "protoset",
+    "solana"
+  ],
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  }
 }

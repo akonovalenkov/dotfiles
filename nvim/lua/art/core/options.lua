@@ -42,3 +42,15 @@ vim.o.completeopt = "menuone,noselect"
 vim.o.list = true
 
 vim.o.splitbelow = true
+
+vim.g.clipboard = {
+  cached_enabled = 1,
+  copy = {
+    ["*"] = { "xsel", "-i", "-p" },
+    ["+"] = { "xsel", "-i", "-b" },
+  },
+  paste = {
+    ["*"] = { "xsel", "-o", "-p" },
+    ["+"] = { "xsel", "-o", "-b" },
+  },
+}

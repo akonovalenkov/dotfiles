@@ -9,14 +9,14 @@ set -o histsavenodups on
 set -o noautocd
 
 
-bindkey -v
-bindkey -M viins ';' vi-cmd-mode
-bindkey -M viins ',' vi-cmd-mode
-bindkey -M viins '^T' fzf-file-widget
-bindkey -M vicmd 'g' fzf-history-widget
-bindkey -M vicmd '/' fzf-history-widget
-
-bindkey -M vicmd 'v' visual-mode
+# bindkey -v
+# bindkey -M viins ';' vi-cmd-mode
+# bindkey -M viins ',' vi-cmd-mode
+# bindkey -M viins '^T' fzf-file-widget
+# bindkey -M vicmd 'g' fzf-history-widget
+# bindkey -M vicmd '/' fzf-history-widget
+#
+# bindkey -M vicmd 'v' visual-mode
 
 cf() {
     local file
@@ -101,7 +101,7 @@ fzf-locate-widget() {
 }
 
 zle     -N    fzf-locate-widget
-bindkey '\ei' fzf-locate-widget
+#bindkey '\ei' fzf-locate-widget
 
 
 # Select a docker container to start and attach to
@@ -130,16 +130,16 @@ function drm() {
 }
 
 
-bindkey -M vicmd -r gUU
-bindkey -M vicmd -r gg
-bindkey -M vicmd -r gE
-bindkey -M vicmd -r ge
-bindkey -M vicmd -r ga
-bindkey -M vicmd -r g~
-bindkey -M vicmd -r gu
-bindkey -M vicmd -r gU
-bindkey -M vicmd -r g~~
-bindkey -M vicmd -r guu
+# bindkey -M vicmd -r gUU
+# bindkey -M vicmd -r gg
+# bindkey -M vicmd -r gE
+# bindkey -M vicmd -r ge
+# bindkey -M vicmd -r ga
+# bindkey -M vicmd -r g~
+# bindkey -M vicmd -r gu
+# bindkey -M vicmd -r gU
+# bindkey -M vicmd -r g~~
+# bindkey -M vicmd -r guu
 
 function vi-yank-x-clipboard {
     zle vi-yank
@@ -148,7 +148,7 @@ function vi-yank-x-clipboard {
 
 zle -N vi-yank-x-clipboard
 
-bindkey -a 'y' vi-yank-x-clipboard
+#bindkey -a 'y' vi-yank-x-clipboard
 
 
 
@@ -160,7 +160,7 @@ function vi-put-after-from-x-clipboard () {
 }
 
 zle -N vi-put-after-from-x-clipboard
-bindkey -a 'p' vi-put-after-from-x-clipboard
+#bindkey -a 'p' vi-put-after-from-x-clipboard
 
 function vi-put-before-from-x-clipboard () {
     RBUFFER="$(xsel -b -o)${RBUFFER}"
@@ -170,10 +170,11 @@ function vi-put-before-from-x-clipboard () {
 }
 
 zle -N vi-put-before-from-x-clipboard
-bindkey -a 'P' vi-put-before-from-x-clipboard
+#bindkey -a 'P' vi-put-before-from-x-clipboard
 
 unalias z 2> /dev/null
 z() {
   [ $# -gt 0 ] && _z "$*" && return
   cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }
+

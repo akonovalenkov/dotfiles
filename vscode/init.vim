@@ -1,5 +1,6 @@
 inoremap ; <esc>
-
+xnoremap ; <esc>
+nnoremap <Enter> :noh<CR>
 
 let mapleader=","
 
@@ -23,6 +24,8 @@ xnoremap <silent> gp <Cmd>call VSCodeNotify('editor.action.marker.prev')<CR>
 nnoremap <silent> gP <Cmd>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>
 xnoremap <silent> gP <Cmd>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>
 
+nnoremap <silent> gt <Cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
+
 nnoremap <silent> <leader>cc <Cmd>call VSCodeNotifyVisual('editor.action.commentLine', 0)<CR><esc>
 xnoremap <silent> <leader>cc <Cmd>call VSCodeNotifyVisual('editor.action.commentLine', 0)<CR><esc>
 
@@ -36,6 +39,7 @@ nnoremap <silent> <leader>q <Cmd>call VSCodeNotify('workbench.action.closeActive
 nnoremap <silent> <leader>a <Cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>
 
 nnoremap <silent> <leader>x <Cmd>call VSCodeNotify('vscode-neovim.send', ':')<CR>
+xnoremap <silent> <leader>x <Cmd>call VSCodeNotifyVisual('vscode-neovim.send', 0, ':')<CR>
 
 
 
@@ -59,8 +63,20 @@ endfunction
 
 xnoremap <leader>r <Cmd>call VSCodeNotifyVisual('editor.action.quickFix', 1)<CR>
 nnoremap <leader>r <Cmd>call VSCodeNotifyVisual('editor.action.quickFix', 1)<CR>
-xnoremap ; <esc>
 nnoremap gi <Cmd>call VSCodeNotifyVisual('editor.action.goToImplementation', 1)<CR>
 xnoremap gi <Cmd>call VSCodeNotifyVisual('editor.action.goToImplementation', 1)<CR>
 
 
+lua << EOF
+vim.g.clipboard = {
+  cached_enabled = 1,
+  copy = {
+    ["*"] = { "xsel", "-i", "-p" },
+    ["+"] = { "xsel", "-i", "-b" },
+  },
+  paste = {
+    ["*"] = { "xsel", "-o", "-p" },
+    ["+"] = { "xsel", "-o", "-b" },
+  },
+}
+EOF

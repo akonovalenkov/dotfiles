@@ -37,18 +37,38 @@
   },
   {
     "key": "` l",
-    "command": "workbench.action.focusNextPart"
-  },
-  {
-    "key": "f6",
-    "command": "-workbench.action.focusNextPart"
+    "command": "workbench.action.focusNextPart",
+    "when": "neovim.mode !== insert"
   },
   {
     "key": "` h",
-    "command": "workbench.action.focusPreviousPart"
+    "command": "workbench.action.focusPreviousPart",
+    "when": "neovim.mode !== insert"
   },
   {
-    "key": "shift+f6",
-    "command": "-workbench.action.focusPreviousPart"
+    "key": "k",
+    "when": "codeActionMenuVisible",
+    "command": "selectPrevCodeAction"
+  },
+  {
+    "key": "j",
+    "when": "codeActionMenuVisible",
+    "command": "selectNextCodeAction"
+  },
+  {
+    "key": "q",
+    "command": "hideCodeActionWidget",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": ";",
+    "command": "hideCodeActionWidget",
+    "when": "codeActionMenuVisible"
+  },
+
+  {
+    "key": "o",
+    "command": "acceptSelectedCodeAction",
+    "when": "codeActionMenuVisible"
   }
 ]
