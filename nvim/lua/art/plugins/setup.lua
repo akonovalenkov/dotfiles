@@ -25,6 +25,7 @@ local plugins = {
   require("art.plugins.surround"),
   require("art.plugins.bqf"),
   require("art.plugins.bufdelete"),
+  require("art.plugins.dadbod-ui"),
 }
 
 local opts = {}

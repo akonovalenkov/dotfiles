@@ -11,6 +11,7 @@ local plugin = {
         mappings = {
           ["n"] = {
             ["q"] = actions.close,
+            ["o"] = actions.select_default,
           },
         },
         sorting_strategy = "ascending",
@@ -50,7 +51,8 @@ local plugin = {
     vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
     vim.keymap.set("n", "gD", builtin.lsp_type_definitions, {})
     vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
-    -- vim.keymap.set('n', '/', builtin.current_buffer_fuzzy_find, {})
+    vim.keymap.set("n", "<leader>z", builtin.resume, {})
+    -- vim.keymap.set("n", "/", builtin.current_buffer_fuzzy_find, {})
 
     --[[ vim.keymap.set('n', '<leader>e', "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", {
       noremap = true

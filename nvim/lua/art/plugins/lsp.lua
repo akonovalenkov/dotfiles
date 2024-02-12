@@ -36,6 +36,8 @@ local plugin = {
 
     require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
 
+    require("lspconfig").sqlls.setup({})
+
     lsp.setup()
 
     local cmp = require("cmp")
