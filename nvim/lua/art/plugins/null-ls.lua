@@ -20,6 +20,7 @@ local plugin = {
               ".eslintrc.js",
               ".eslintrc.json",
               ".eslintrc.cjs",
+              -- "eslint.config.mjs",
             })
           end,
         }),
