@@ -1,6 +1,6 @@
 local plugin = {
   "nvim-telescope/telescope.nvim",
-  tag = "0.1.1",
+  tag = "0.1.5",
   config = function()
     local telescope = require("telescope")
     local builtin = require("telescope.builtin")
