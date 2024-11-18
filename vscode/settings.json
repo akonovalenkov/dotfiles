@@ -1,6 +1,6 @@
 {
   "editor.cursorStyle": "line",
-  "editor.fontFamily": "YaHei Consolas Hybrid",
+  "editor.fontFamily": "UbuntuMono Nerd Font Mono",
   "editor.lineNumbers": "relative",
   "editor.roundedSelection": false,
   "extensions.autoUpdate": false,
@@ -63,9 +63,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "debug.node.autoAttach": "on",
-  "vscode-neovim.neovimExecutablePaths.linux": "/home/artem/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.linux": "/home/artem/init.vim",
-  "editor.fontSize": 13,
   "editor.lineHeight": 1.2,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -97,7 +94,6 @@
   },
   "kotlin.debugAdapter.path": "250",
   "editor.accessibilitySupport": "off",
-  "vscode-neovim.neovimClean": true,
   "javascript.preferGoToSourceDefinition": true,
   "typescript.preferGoToSourceDefinition": true,
   "rust-analyzer.lens.enable": false,
@@ -117,5 +113,6 @@
   ],
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
-  }
+  },
+  "vscode-neovim.neovimInitVimPaths.linux": "~/code/dotfiles/vscode/init.vim"
 }
